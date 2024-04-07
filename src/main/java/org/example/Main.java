@@ -54,6 +54,21 @@ public class Main {
                     reverse(n);
                     System.out.println();
                     break;
+                case 8:
+                    sc.nextLine();
+                    String s = sc.nextLine();
+                    System.out.println(digits(s));
+                    break;
+                case 9:
+                    n= sc.nextInt();
+                    int k= sc.nextInt();
+                    System.out.println(binom(n,k));
+                    break;
+                case 10:
+                    int d= sc.nextInt();
+                    int b = sc.nextInt();
+                    System.out.println(gcd(d,b));
+                    break;
             }
         }
     }
@@ -136,7 +151,36 @@ public class Main {
         reverse(n-1);
         System.out.printf("%d ", current);
     }
-    public static String digits(String s){
-
+    public static boolean digits(String s){
+        if(s.isEmpty()){
+            return true;
+        }
+        char first=s.charAt(0);
+        if (!Character.isDigit(first)){
+            return false;
+        }
+        else{
+            return digits(s.substring(1));
+        }
+    }
+    public static int binom(int n, int k){
+        if(k==0 || k==n){
+            return 1;
+        }
+        return binom(n-1,k-1)+binom(n-1,k);
+    }
+    public static int gcd(int a, int b){
+        if(a==0){
+            return b;
+        }
+        if(b==0){
+            return a;
+        }
+        if (a>b){
+            return gcd(a%b,b);
+        }
+        else{
+            return gcd(a,b%a);
+        }
     }
 }
