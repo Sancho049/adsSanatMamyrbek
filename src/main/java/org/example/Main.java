@@ -43,6 +43,17 @@ public class Main {
                 case 5:
                     n= sc.nextInt();
                     System.out.println(Fib(n));
+                    break;
+                case 6:
+                    double a= sc.nextInt();
+                    n= sc.nextInt();
+                    System.out.println(Pow(a,n));
+                    break;
+                case 7:
+                    n = sc.nextInt();
+                    reverse(n);
+                    System.out.println();
+                    break;
             }
         }
     }
@@ -104,6 +115,28 @@ public class Main {
         else{
             return Fib(n-1)+Fib(n-2);
         }
+    }
+    public static double Pow(double a,int n){
+        if(n==0){
+            return 1;
+        }
+       else if (n%2==0){
+           return Pow(a*a,n/2);
+        }
+       else{
+           return a*Pow(a,n-1);
+        }
+    }
+    public static void reverse(int n){
+        if (n==0){
+            return;
+        }
+        Scanner sc = new Scanner(System.in);
+        int current = sc.nextInt();
+        reverse(n-1);
+        System.out.printf("%d ", current);
+    }
+    public static String digits(String s){
 
     }
 }
