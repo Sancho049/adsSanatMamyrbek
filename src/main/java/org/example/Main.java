@@ -39,6 +39,10 @@ public class Main {
                 case 4:
                     n = sc.nextInt();
                     System.out.println(Factorial(n));
+                    break;
+                case 5:
+                    n= sc.nextInt();
+                    System.out.println(Fib(n));
             }
         }
     }
@@ -89,5 +93,17 @@ public class Main {
         else{
             return n* Factorial(n-1);
         }
+    }
+    public static int Fib(int n){
+        if(n==0){
+            return 0;
+        }
+        else if(n==1){
+            return 1;
+        }
+        else{
+            return Fib(n-1)+Fib(n-2);
+        }
+
     }
 }
